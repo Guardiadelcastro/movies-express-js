@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
     const movieToAdd: Movie = controller.bodyToMovie(req.body);
     if (!movieToAdd) {
       res.send({ message: 'Oops, an error has ocurred while adding new movie.', }, 400);
-      return true ;
+      return;
     }
     controller.addMovie(movieToAdd);
     res.json({ message: 'New Movie added!', movieToAdd });
